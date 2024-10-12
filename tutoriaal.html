@@ -40,49 +40,76 @@
 <p>Las ramas en Git son una forma de trabajar en diferentes características o correcciones de manera aislada. Esto permite que varios desarrolladores trabajen simultáneamente sin interferir entre sí.</p>
 
 <h2>Paso 1: Configuración Inicial</h2>
-<p>Asegúrate de tener Git instalado en tu computadora. Puedes verificar esto abriendo tu terminal o línea de comandos y escribiendo:</p>
-<pre><code>git --version</code></pre>
 <p>Si no tienes Git instalado, descárgalo desde <a href="https://git-scm.com" target="_blank">git-scm.com</a>.</p>
 <img src="Imagenes/descarga git.png"
 
-<h2>Paso 2: Clonar un Repositorio</h2>
+<h2> Paso 2: Clonar un Repositorio</h2>
 <p>Si ya tienes un repositorio, puedes saltarte este paso. Si no, clona uno desde GitHub o cualquier otra fuente:</p>
 <pre><code>git clone https://github.com/usuario/nombre-del-repo.git
 cd nombre-del-repo</code></pre>
 
-<h2>Paso 3: Verificar Ramas Existentes</h2>
+<h2>Paso 3: Configuración Inicial</h2> 
+<p>Primero, asegúrate de tener Git configurado en tu computadora y de haber clonado un repositorio en el que trabajar. Puedes verificar tu versión de Git escribiendo:</p> 
+<p> <img src="Imagenes/versiongit.jpg" alt=""></p>
+<pre><code>git --version</code></pre>
+<p>Si necesitas instalar Git, descárgalo desde <a href="https://git-scm.com" target="_blank">git-scm.com</a>.</p>
+
+<h2>Paso 4: Verificar Ramas Existentes</h2>
 <p>Antes de crear una nueva rama, es útil ver las ramas existentes:</p>
 <pre><code>git branch</code></pre>
 <img src="Imagenes/git branch.png"
 
-<h2>Paso 4: Crear una Nueva Rama</h2>
+<h2>Paso 5: Crear una Nueva Rama</h2>
 <p>Para crear una nueva rama, utiliza el siguiente comando:</p>
 <pre><code>git branch nombre-de-la-rama</code></pre>
 <img src="Imagenes/Git push origin nombre de la rama.png"
 
-<h2>Paso 5: Cambiar a la Nueva Rama</h2>
+<h2>Paso 6: Cambiar a la Nueva Rama</h2>
 <p>Una vez creada la rama, cambia a ella con:</p>
 <pre><code>git checkout nombre-de-la-rama</code></pre>
 <p>O, si prefieres crear y cambiar de rama en un solo paso:</p>
 <pre><code>git checkout -b nombre-de-la-rama</code></pre>
 
-<h2>Paso 6: Realizar Cambios y Confirmar</h2>
+<h2>Paso 7: Realizar Cambios y Confirmar</h2>
 <p>Ahora puedes realizar cambios en tu proyecto. Una vez que hayas hecho tus modificaciones, añade y confirma los cambios:</p>
 <pre><code>git add .
 git commit -m "Descripción de los cambios realizados"</code></pre>
 <img src="Imagenes/git add.png"
 
-<h2>Paso 7: Volver a la Rama Principal</h2>
+<h2>Paso 8: Volver a la Rama Principal</h2>
 <p>Para volver a la rama principal (normalmente llamada <code>main</code> o <code>master</code>):</p>
 <pre><code>git checkout main</code></pre>
 
-<h2>Paso 8: Fusionar la Nueva Rama</h2>
+<h2>Paso 9: Fusionar la Nueva Rama</h2>
 <p>Si deseas fusionar los cambios de tu nueva rama en la rama principal, primero asegúrate de estar en la rama principal:</p>
 <pre><code>git checkout main</code></pre>
 <p>Luego, fusiona tu rama:</p>
 <pre><code>git merge nombre-de-la-rama</code></pre>
 
 
+<h1>Tutorial: Cómo utilizar Pull Request en GitHub</h1> 
+
+    <h2>Introducción</h2> 
+        <p>Un <strong>pull request</strong> (PR) es una forma en la que los desarrolladores pueden solicitar la revisión y fusión de sus cambios en un proyecto. Es una herramienta clave para la colaboración en proyectos, ya que permite que otros revisen tu código antes de fusionarlo en la rama principal.</p>
+        
+    
+    <h2>Paso 1: Crear un Pull Request en GitHub</h2>
+        <p>Ahora que tu rama está en el repositorio remoto, dirígete a GitHub y abre el repositorio donde subiste tu rama. Verás un botón que sugiere crear un Pull Request. Haz clic en él y sigue los siguientes pasos:</p>
+            <ol> <li>Selecciona tu rama en el menú desplegable.</li>
+                <li>Asegúrate de que la rama base (normalmente <code>main</code>) esté seleccionada como el destino.</li>
+                <li>Escribe una descripción clara de los cambios realizados.</li> <li>Haz clic en <strong>Crear Pull Request</strong>.</li> </ol>
+                <img src="Imagenes/create_pull_request.png">
+            
+         <h2>Paso 6: Revisar y Discutir el Pull Request</h2>
+             <p>Una vez que crees el pull request, otros miembros del equipo podrán revisar tu código, dejar comentarios o sugerencias, y discutir los cambios directamente en GitHub. Tú también puedes responder a los comentarios y hacer ajustes según sea necesario.</p>
+        
+         <h2>Paso 7: Fusionar el Pull Request</h2>
+             <p>Cuando el pull request haya sido aprobado y revisado, podrás fusionarlo en la rama principal. Si tienes permisos, verás un botón <strong>Merge Pull Request</strong>. Haz clic en él para fusionar los cambios.</p>
+            
+             <p>Si no tienes permisos de escritura en el repositorio, otra persona del equipo tendrá que hacer la fusión por ti.</p> <img src="Imagenes/merge_pull_request.png"> 
+             
+             <h2>Paso 8: Eliminar la Rama</h2>
+                 <p>Una vez fusionado el pull request, es recomendable eliminar la rama que ya no necesitas para mantener el repositorio limpio. En GitHub, aparecerá un botón para eliminar la rama después de la fusión, o también puedes hacerlo desde la terminal:</p> <pre><code>git branch -d nombre-de-la-rama git push origin --delete nombre-de-la-rama</code></pre>
 
 
 
