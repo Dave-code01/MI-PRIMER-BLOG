@@ -1,121 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-<h1>hola este es un tutorial de Git Fork/h1>
-
-    <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cómo crear ramas en Git</title>
+    <title>Tutorial: Git Fork y Pull Requests</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 20px;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f0f0f0;
         }
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             color: #333;
         }
+
+        h1 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
         pre {
             background-color: #f4f4f4;
             padding: 10px;
             border: 1px solid #ccc;
             overflow-x: auto;
+            border-radius: 4px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
         }
     </style>
 </head>
+
 <body>
+    <h1>Tutorial: Git Fork y Pull Requests</h1>
 
-<h1>Tutorial: Cómo crear ramas en Git</h1>
+    <section>
+        <h2>Cómo hacer un fork a un repositorio y colaborar en él</h2>
+        <p>El fork es una forma de crear una copia personal de un repositorio ajeno. Esto te permite experimentar con
+            cambios sin afectar el proyecto original.</p>
 
-<h2>Introducción</h2>
-<p>Las ramas en Git son una forma de trabajar en diferentes características o correcciones de manera aislada. Esto permite que varios desarrolladores trabajen simultáneamente sin interferir entre sí.</p>
+        <h3>Pasos para hacer un fork:</h3>
+        <ol>
+            <li>Entra al repositorio que quieres hacer fork.</li>
+            <li>Haz clic en el botón "Fork" en la esquina superior derecha.</li>
+            <img src="/Imagenes/forkRepo.png" alt="Botón Fork en GitHub">
+            <li>GitHub creará una copia del repositorio en tu cuenta.</li>
+            <img src="/Imagenes/nuevoFork.png" alt="Nuevo Fork creado">
+            <li>Ahora tienes tu propia copia del repositorio donde puedes hacer cambios.</li>
+            <img src="/Imagenes/forkRealizado.png" alt="Fork completado">
+        </ol>
+    </section>
 
-<h2>Paso 1: Configuración Inicial</h2>
-<p>Si no tienes Git instalado, descárgalo desde <a href="https://git-scm.com" target="_blank">git-scm.com</a>.</p>
-<img src="Imagenes/descarga git.png"
+    <section>
+        <h2>Cómo crear ramas en Git</h2>
+        <p>Las ramas en Git permiten trabajar en diferentes características o correcciones de manera aislada.</p>
 
-<h2> Paso 2: Clonar un Repositorio</h2>
-<p>Si ya tienes un repositorio, puedes saltarte este paso. Si no, clona uno desde GitHub o cualquier otra fuente:</p>
-<pre><code>git clone https://github.com/usuario/nombre-del-repo.git
-cd nombre-del-repo</code></pre>
+        <h3>Configuración Inicial</h3>
+        <p>Asegúrate de tener Git instalado. Puedes verificar tu versión con:</p>
+        <pre><code>git --version</code></pre>
+        <img src="Imagenes/versiongit.jpg" alt="Verificación de versión de Git">
 
-<h2>Paso 3: Configuración Inicial</h2> 
-<p>Primero, asegúrate de tener Git configurado en tu computadora y de haber clonado un repositorio en el que trabajar. Puedes verificar tu versión de Git escribiendo:</p> 
-<p> <img src="Imagenes/versiongit.jpg" alt=""></p>
-<pre><code>git --version</code></pre>
-<p>Si necesitas instalar Git, descárgalo desde <a href="https://git-scm.com" target="_blank">git-scm.com</a>.</p>
+        <h3>Pasos para crear y usar ramas:</h3>
+        <ol>
+            <li>Verifica las ramas existentes:
+                <pre><code>git branch</code></pre>
+                <img src="Imagenes/gitranch.png" alt="Listado de ramas">
+            </li>
+            <li>Crea una nueva rama:
+                <pre><code>git branch nombre-de-la-rama</code></pre>
+                <img src="Imagenes/GitBranch.png" alt="Creación de nueva rama">
+            </li>
+            <li>Cambia a la nueva rama:
+                <pre><code>git checkout nombre-de-la-rama</code></pre>
+                <img src="Imagenes/gitCheckout.png" alt="Cambio a nueva rama">
+            </li>
+            <li>Realiza cambios y confírmalos:
+                <pre><code>git add .
+                    git commit -m "Descripción de los cambios realizados"</code></pre>
+                <img src="Imagenes/gitAdd.png" alt="Añadir y confirmar cambios">
+            </li>
+        </ol>
+    </section>
 
-<h2>Paso 4: Verificar Ramas Existentes</h2>
-<p>Antes de crear una nueva rama, es útil ver las ramas existentes:</p>
-<pre><code>git branch</code></pre>
-<img src="Imagenes/git branch.png"
+    <section>
+        <h2>Cómo utilizar Pull Requests en GitHub</h2>
+        <p>Un Pull Request (PR) es una forma de solicitar la revisión y fusión de tus cambios en el proyecto principal.
+        </p>
 
-<h2>Paso 5: Crear una Nueva Rama</h2>
-<p>Para crear una nueva rama, utiliza el siguiente comando:</p>
-<pre><code>git branch nombre-de-la-rama</code></pre>
-<img src="Imagenes/Git push origin nombre de la rama.png"
+        <h3>Pasos para crear un Pull Request:</h3>
+        <ol>
+            <li>Ve a tu repositorio forkeado en GitHub.</li>
+            <li>Haz clic en "New Pull Request".</li>
+            <li>Selecciona tu rama y la rama destino del repositorio original.</li>
+            <li>Escribe una descripción clara de los cambios realizados.</li>
+            <li>Haz clic en "Create Pull Request".</li>
+        </ol>
+        <img src="Imagenes/pullRequest.jpeg" alt="Crear Pull Request">
 
-<h2>Paso 6: Cambiar a la Nueva Rama</h2>
-<p>Una vez creada la rama, cambia a ella con:</p>
-<pre><code>git checkout nombre-de-la-rama</code></pre>
-<p>O, si prefieres crear y cambiar de rama en un solo paso:</p>
-<pre><code>git checkout -b nombre-de-la-rama</code></pre>
+        <h3>Revisión y discusión del Pull Request:</h3>
+        <p>Otros miembros del equipo podrán revisar tu código y dejar comentarios.</p>
+        <img src="/Imagenes/dicusion.png" alt="Discusión en Pull Request">
 
-<h2>Paso 7: Realizar Cambios y Confirmar</h2>
-<p>Ahora puedes realizar cambios en tu proyecto. Una vez que hayas hecho tus modificaciones, añade y confirma los cambios:</p>
-<pre><code>git add .
-git commit -m "Descripción de los cambios realizados"</code></pre>
-<img src="Imagenes/git add.png"
-
-<h2>Paso 8: Volver a la Rama Principal</h2>
-<p>Para volver a la rama principal (normalmente llamada <code>main</code> o <code>master</code>):</p>
-<pre><code>git checkout main</code></pre>
-
-<h2>Paso 9: Fusionar la Nueva Rama</h2>
-<p>Si deseas fusionar los cambios de tu nueva rama en la rama principal, primero asegúrate de estar en la rama principal:</p>
-<pre><code>git checkout main</code></pre>
-<p>Luego, fusiona tu rama:</p>
-<pre><code>git merge nombre-de-la-rama</code></pre>
-
-
-<h1>Tutorial: Cómo utilizar Pull Request en GitHub</h1> 
-
-    <h2>Introducción</h2> 
-        <p>Un <strong>pull request</strong> (PR) es una forma en la que los desarrolladores pueden solicitar la revisión y fusión de sus cambios en un proyecto. Es una herramienta clave para la colaboración en proyectos, ya que permite que otros revisen tu código antes de fusionarlo en la rama principal.</p>
-        
-    
-    <h2>Paso 1: Crear un Pull Request en GitHub</h2>
-        <p>Ahora que tu rama está en el repositorio remoto, dirígete a GitHub y abre el repositorio donde subiste tu rama. Verás un botón que sugiere crear un Pull Request. Haz clic en él y sigue los siguientes pasos:</p>
-            <ol> <li>Selecciona tu rama en el menú desplegable.</li>
-                <li>Asegúrate de que la rama base (normalmente <code>main</code>) esté seleccionada como el destino.</li>
-                <li>Escribe una descripción clara de los cambios realizados.</li> <li>Haz clic en <strong>Crear Pull Request</strong>.</li> </ol>
-                <img src="Imagenes/create_pull_request.png">
-            
-         <h2>Paso 6: Revisar y Discutir el Pull Request</h2>
-             <p>Una vez que crees el pull request, otros miembros del equipo podrán revisar tu código, dejar comentarios o sugerencias, y discutir los cambios directamente en GitHub. Tú también puedes responder a los comentarios y hacer ajustes según sea necesario.</p>
-        
-         <h2>Paso 7: Fusionar el Pull Request</h2>
-             <p>Cuando el pull request haya sido aprobado y revisado, podrás fusionarlo en la rama principal. Si tienes permisos, verás un botón <strong>Merge Pull Request</strong>. Haz clic en él para fusionar los cambios.</p>
-            
-             <p>Si no tienes permisos de escritura en el repositorio, otra persona del equipo tendrá que hacer la fusión por ti.</p> <img src="Imagenes/merge_pull_request.png"> 
-             
-             <h2>Paso 8: Eliminar la Rama</h2>
-                 <p>Una vez fusionado el pull request, es recomendable eliminar la rama que ya no necesitas para mantener el repositorio limpio. En GitHub, aparecerá un botón para eliminar la rama después de la fusión, o también puedes hacerlo desde la terminal:</p> <pre><code>git branch -d nombre-de-la-rama git push origin --delete nombre-de-la-rama</code></pre>
-
-
-
+        <h3>Aceptación del Pull Request:</h3>
+        <p>Cuando el PR sea aprobado, se puede fusionar con la rama principal.</p>
+        <img src="/Imagenes/pullAceptado.jpeg" alt="Pull Request aceptado">
+        <p>Así se ve cuando el pull request se acepta:</p>
+        <img src="Imagenes/final.jpeg" alt="Pull Request finalizado">
+    </section>
 </body>
-</html>
 
-   <p>Hola chicos mi comentario - Esteban</p>
-</body>
 </html>
